@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            color: var(--text-body);
+            overflow-x: hidden;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            /* background-color: violet; */
+            box-shadow: 0 4px 4px #0000001a;
+            align-items: center;
+        }
+
+        #container{
+            margin-top: 15px;
+            /* background-color: aqua; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #ipfield {
+            /* background-color: black; */
+            /* height: 500px; */
+            width: 250px;
+        }
+        #ipass {
+            width: 245px;
+            height: 25px;
+            overflow: hidden;
+            border: 1px solid black;
+            border-radius: 2.5x;
+        }
+        #indicator {
+            /* background-color: black; */
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+        /* #progress-container{
+            height: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        } */
+        /* #progress-bar{
+            background-color: white;
+            height: 10px;
+            margin: 25px;
+            width: 255px;
+            border: 1px solid black;
+            border-radius: 20px;
+        } */
+        #progress-container {
+            position: relative;
+            width: 15rem;
+            height: 0.6rem;
+            margin: auto;
+            border-radius: 8px;
+            outline: 1px solid #ccc;
+        }
+
+        #progress-bar {
+            width: 0%;
+            height: 100%;
+            background: red;
+            transition: all 0.25s ease-in-out;
+        }
+
+        #paragraphs {
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="http://google.com" target="_blank">Google</a>
+        </div>
+        <h1>Password Strength</h1>
+        <div>
+            <a href="http://github.com" target="_blank" rel="noopener noreferrer">Github</a>
+        </div>
+    </nav>
+
+    <div id="container">
+        <div id="ipfield">
+            <input type="text" name="password" id="ipass">
+        </div>
+        <div id="indicator">
+            <span id="lc">Lowercase</span>
+            <span id="uc">Uppercase</span>
+            <span id="numb">Number</span>
+            <span id="sym">Symbols</span>
+        </div>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <div id="paragraphs">
+            <p id="p1">Password has <strong id="chars"> 0 </strong> chars</p>
+            <p id="p2" >Your password is <strong id="st">weak</strong></p>
+        </div>
+    </div>
+
+    <script>
+
+        let field = document.getElementById("ipass")
+        field.addEventListener("input",() => {
+            let value = field.value;
+            let strength = 0;
+
+            if(/[a-z]/.test(value)){
+                document.getElementById("lc").style.color = "green";
+                strength = strength + 1
+            }else {
+                document.getElementById("lc").style.color = "black"
+            }
+
+            if(/[A-Z]/.test(value)){
+                document.getElementById("uc").style.color = "green";
+                strength = strength + 1
+            }else {
+                document.getElementById("uc").style.color = "black"
+            }
+
+            if(/[0-9]/.test(value)){
+                document.getElementById("numb").style.color = "green";
+                strength = strength + 1
+            }else {
+                document.getElementById("numb").style.color = "black"
+            }
+
+            if(/[!@#$%^&*(),.?":{}|<>]/.test(value)){
+                document.getElementById("sym").style.color = "green";
+                strength = strength + 1
+            }else {
+                document.getElementById("sym").style.color = "black"
+            }
+
+
+            
+            let progressBar = document.getElementById("progress-bar");
+            let strengthText = document.getElementById("p2").querySelector("strong");
+
+
+            // console.log(strengthText)
+            if(strength == 1){
+                progressBar.style.width = strength * 10 + '%';
+                strengthText.textContent = "weak"
+            }else if(strength == 2){
+                progressBar.style.width = strength * 10 + '%';
+                strengthText.textContent = "medium"
+            }else if (strength == 3){
+                progressBar.style.width = strength * 10 + '%';
+                strengthText.textContent = "medium";
+            }else {
+                progressBar.style.overflow = "hidden";
+                progressBar.style.width = strength * 100 + '%';
+                strength.textContent = "strong";
+            }
+            let char = document.getElementById("chars")
+            char.textContent = value.length;
+
+        });
+
+    </script>
+
+</body>
+</html>

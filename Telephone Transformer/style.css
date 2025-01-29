@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#outer{
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+}
+#inner{
+    /* background-color: violet; */
+    margin: 10px;
+    padding: 10px;
+}
+#pnum{
+    height: 30px;
+    width: 220px;
+    /* padding: auto; */
+    font-weight: 600;
+    font-size: medium;
+}
+#para{
+    margin-top: 6px;
+    text-align: center;
+}

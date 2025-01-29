@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#outer {
+    height: 500px;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#stars {
+    background-color: gray;
+    margin-top: 30px;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#stars input {
+    display: none;
+}
+
+label {
+    font-size: 40px;
+    padding: 2px;
+    transition: all 0.2s ease;
+    color: #ccc; /* Default color for unselected stars */
+    cursor: pointer;
+}
+
+/* Highlight stars on hover */
+label:hover,
+label:hover ~ label {
+    color: #fd4;
+}
+
+/* Highlight selected star and all preceding stars */
+input:checked + label,
+input:checked + label ~ label {
+    color: #fd4;
+    text-shadow: 0 0 30px #952; /* Optional glow effect */
+}

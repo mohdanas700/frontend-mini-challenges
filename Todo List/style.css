@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: 60px;
+}
+
+.nav-bar {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* or 'absolute' */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#todoInput{
+    margin-bottom: 1rem;
+    padding: 0.25rem;
+    font-size: 1.25rem;
+}
+
+.no-element {
+    display: none;
+}
+
+.list-container:empty ~ .no-element {
+    display: block;
+    font-size: 2rem;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+button {
+    margin-left: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.list-container {
+    margin-top: 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+button.edit {
+    transform: rotateY(180deg);
+  }

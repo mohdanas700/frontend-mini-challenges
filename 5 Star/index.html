@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .star_rating{
+        user-select: none;
+        height: 80px;
+        width: 300px;
+        text-align: center;
+        margin-top: 10px;
+        /* background-color: aqua; */
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    .star{
+        font-size: 3rem;
+        color: #ff9800;
+        background-color: unset;
+        border: none;
+    }
+
+    .star:hover{
+        cursor: pointer;
+
+    }
+
+</style>
+<body>
+    <h1> Give your Feedback</h1>
+    <div class="star_rating">
+        <button class="star">&#9734;</button>
+        <button class="star">&#9734;</button>
+        <button class="star">&#9734;</button>
+        <button class="star">&#9734;</button>
+        <button class="star">&#9734;</button>
+    </div>
+    <div>
+        <h1 id="emoji"></h1>
+    </div>
+
+    <script>
+        const allStars = document.querySelectorAll(".star");
+        const smileys = ['😢', '😞', '😐', '😀', '😎'];
+        const emoji = document.getElementById("emoji");
+        
+        allStars.forEach( (star,i) => {
+            star.addEventListener("mouseover",function() {
+                star.innerHTML = '&#9733'
+            })
+            star.addEventListener("mouseout",function() {
+                star.innerHTML = '&#9734'
+            })
+        })
+
+        allStars.forEach( (star,i) => {
+            star.addEventListener('click',()=> {
+                const current_star_index =  i;
+                console.log(current_star_index)
+                allStars.forEach( (star,j) => {
+                    if(current_star_index+1 >= j+1){
+                        star.innerHTML = '&#9733'
+                        // emoji.textContent = smileys[current_star_index]                    
+                    }
+                    else {
+                        star.innerHTML = '&#9734'
+                    }
+                });
+                emoji.textContent = smileys[current_star_index]
+            });
+        });
+    </script>
+</body>
+</html>

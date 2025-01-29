@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <span>
+            <a href="http://youtube.com" target="_blank">Youtube</a>
+        </span>
+        <h1>Todo List</h1>
+        <span>
+            <a href="http://github.com">Github</a>
+        </span>
+    </nav>
+
+    <div class="container">
+
+        <form id="todoForm">
+            <input type="text" autocomplete="off" placeholder="item" id="todoInput">
+        </form>
+
+        <div id="listContainer" class="list-container"></div>
+        <div class="no-element">Ooops! List is empty</div>
+
+    </div>
+
+    <template id="todo">
+        <li>
+            <span class="text"></span>
+            <button class="edit">✏️</button>
+            <button class="delete">🗑️</button>
+        </li>
+    </template>
+    
+    <script src="script.js"></script>
+</body>
+</html>
