@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"> <!-- Defines the character set as UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on all screen sizes -->
+    <title>Todo List</title> <!-- Title of the webpage -->
+    <link rel="stylesheet" href="style.css"> <!-- Links the external CSS file -->
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav class="nav-bar">
         <span>
-            <a href="http://youtube.com" target="_blank">Youtube</a>
+            <a href="http://youtube.com" target="_blank">Youtube</a> <!-- Link to YouTube -->
         </span>
-        <h1>Todo List</h1>
+        <h1>Todo List</h1> <!-- Main heading for the page -->
         <span>
-            <a href="http://github.com">Github</a>
+            <a href="http://github.com">Github</a> <!-- Link to GitHub -->
         </span>
     </nav>
 
     <div class="container">
-
+        <!-- Todo Form -->
         <form id="todoForm">
-            <input type="text" autocomplete="off" placeholder="item" id="todoInput">
+            <input type="text" autocomplete="off" placeholder="item" id="todoInput"> <!-- Input field for adding new todo item -->
         </form>
 
+        <!-- List Container (where todo items will be displayed) -->
         <div id="listContainer" class="list-container"></div>
-        <div class="no-element">Ooops! List is empty</div>
 
+        <!-- Message displayed when the list is empty -->
+        <div class="no-element">Ooops! List is empty</div>
     </div>
 
+    <!-- Template for a single todo item (used for cloning) -->
     <template id="todo">
         <li>
-            <span class="text"></span>
-            <button class="edit">✏️</button>
-            <button class="delete">🗑️</button>
+            <span class="text"></span> <!-- The text of the todo item -->
+            <button class="edit">✏️</button> <!-- Edit button to modify the todo item -->
+            <button class="delete">🗑️</button> <!-- Delete button to remove the todo item -->
         </li>
     </template>
     
+    <!-- Link to the external JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>

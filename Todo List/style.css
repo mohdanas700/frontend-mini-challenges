@@ -1,71 +1,82 @@
+/* Global reset for margin and padding */
 * {
     margin: 0;
     padding: 0;
 }
 
+/* Adds padding to the body for better positioning */
 body {
-    padding-top: 60px;
+    padding-top: 60px; /* Gives space at the top for the fixed navigation bar */
 }
 
+/* Styling for the navigation bar */
 .nav-bar {
-    margin-top: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed; /* or 'absolute' */
+    margin-top: 5px; /* Adds some space at the top */
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: space-between; /* Spreads links to both sides */
+    align-items: center; /* Vertically aligns items */
+    position: fixed; /* Fixes the navigation bar at the top */
     top: 0;
-    width: 100%;
-    z-index: 1000;
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensures it stays above other content */
 }
 
+/* Styling for the main content container */
 .container {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    margin-top: 10px; /* Adds space below the fixed nav bar */
+    display: flex; /* Flexbox for vertical alignment */
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    flex-direction: column; /* Stacks elements vertically */
 }
 
-#todoInput{
-    margin-bottom: 1rem;
-    padding: 0.25rem;
-    font-size: 1.25rem;
+/* Styling for the input field where user types todo items */
+#todoInput {
+    margin-bottom: 1rem; /* Adds space below the input field */
+    padding: 0.25rem; /* Adds padding inside the input */
+    font-size: 1.25rem; /* Increases font size for readability */
 }
 
+/* Styling for the "No elements" message */
 .no-element {
-    display: none;
+    display: none; /* Hidden by default */
 }
 
+/* When the list is empty, the "No elements" message will be displayed */
 .list-container:empty ~ .no-element {
-    display: block;
-    font-size: 2rem;
+    display: block; /* Displays the message */
+    font-size: 2rem; /* Increases the font size for visibility */
 }
 
+/* Styling for each list item (todo item) */
 li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1rem;
+    display: flex; /* Flexbox for horizontal alignment of buttons and text */
+    align-items: center; /* Vertically aligns buttons with the text */
+    justify-content: center; /* Centers the todo item */
+    margin-top: 1rem; /* Adds space between list items */
 }
 
+/* Styling for the buttons (edit and delete) */
 button {
-    margin-left: 0.5rem;
-    color: white;
-    font-size: 1rem;
-    background-color: white;
-    border: none;
-    cursor: pointer;
+    margin-left: 0.5rem; /* Adds space between buttons */
+    color: white; /* Text color for buttons */
+    font-size: 1rem; /* Button font size */
+    background-color: white; /* Button background color */
+    border: none; /* Removes default button border */
+    cursor: pointer; /* Changes cursor to a pointer on hover */
 }
 
+/* Styling for the list container where all todo items are displayed */
 .list-container {
-    margin-top: 10px;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    margin-top: 10px; /* Adds space above the list */
+    font-size: 20px; /* Increases font size of todo items */
+    display: flex; /* Flexbox for vertical alignment of todo items */
+    justify-content: center; /* Centers todo items horizontally */
+    align-items: center; /* Centers todo items vertically */
+    flex-direction: column; /* Stacks todo items vertically */
 }
 
+/* Styling for the edit button, rotates it */
 button.edit {
-    transform: rotateY(180deg);
-  }
+    transform: rotateY(180deg); /* Rotates the button by 180 degrees (flips it) */
+}
