@@ -4,21 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinite Scroll</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Linking external CSS file -->
 </head>
 <body>
     <div class="container">
+        <!-- Container to hold dynamically loaded posts -->
         <div class="post-container"></div>
+
+        <!-- Loader displayed when fetching new posts -->
         <div class="loader">
             <h2>Loading...</h2>
         </div>
+
+        <!-- Message displayed when all posts are loaded -->
         <div class="end-of-content">
             <h2>End of content</h2>
         </div>
+
+        <!-- Error message displayed if post fetching fails -->
         <div class="fetch-error">
-            <h2>Error occured while fetching posts, try refreshing!</h2>
+            <h2>Error occurred while fetching posts, try refreshing!</h2>
         </div>
     </div>
-    <script src="script.js"></script>
+    
+    <script src="script.js"></script> <!-- Linking external JavaScript file -->
 </body>
 </html>

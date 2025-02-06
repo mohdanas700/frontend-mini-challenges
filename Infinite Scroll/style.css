@@ -1,9 +1,11 @@
+/* Styles for the main container */
 .container {
     display: flex;
     flex-direction: column;
     padding: 1rem;
-  }
-  
+}
+
+/* Styles for individual posts */
 .post {
     display: flex;
     align-items: center;
@@ -13,25 +15,30 @@
     border-radius: 8px;
 }
 
+/* Styles for the post content */
 .post-body {
     padding-inline: 1rem;
 }
 
+/* Numbering style for posts */
 .post-number {
     padding: 1rem;
     background-color: oldlace;
     border-radius: 8px;
 }
 
+/* Center-align the loader */
 .loader {
     text-align: center;
 }
 
+/* Hide "End of content" message initially */
 .end-of-content {
     display: none;
     text-align: center;
 }
 
+/* Hide error message initially and set red color */
 .fetch-error {
     display: none;
     text-align: center;
